@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Usuario</title>
+</head>
+<body>
+    <h1>Editar Usuario</h1>
+
+    <form action="{{ url_for('editar_usuario', id=usuario[0]) }}" method="POST">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="{{ usuario[1] }}" required><br><br>
+
+        <label>Correo:</label>
+        <input type="email" name="correo" value="{{ usuario[2] }}" required><br><br>
+
+        <label>Teléfono:</label>
+        <input type="text" name="telefono" value="{{ usuario[3] }}"><br><br>
+
+        <button type="submit">Guardar cambios</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('listar_usuarios') }}">Volver a la lista</a>
+</body>
+</html>
