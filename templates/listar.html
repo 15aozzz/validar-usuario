@@ -3,35 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
 <body>
-    <h1>Lista de Usuarios</h1>
+    <div class="container">
+        <h1>Usuarios Registrados</h1>
 
-    <table border="1" cellpadding="5" cellspacing="0">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-        </tr>
-        {% for usuario in usuarios %}
-        <tr>
-            <td>{{ usuario[0] }}</td>
-            <td>{{ usuario[1] }}</td>
-            <td>{{ usuario[2] }}</td>
-            <td>{{ usuario[3] }}</td>
-            <td>
-                <a href="{{ url_for('editar_usuario', id=usuario[0]) }}">Editar</a> |
-                <a href="{{ url_for('eliminar_usuario', id=usuario[0]) }}" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+        {% if usuarios %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+                <th>Acciones</th>
+            </tr>
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario[0] }}</td>
+                <td>{{ usuario[1] }}</td>
+                <td>{{ usuario[2] }}</td>
+                <td>{{ usuario[3] }}</td>
+                <td>
+                    <a href="{{ url_for('editar_usuario', id=usuario[0]) }}" class="btn btn-editar">Editar</a>
+                    <a href="{{ url_for('eliminar_usuario', id=usuario[0]) }}" class="btn btn-eliminar" onclick="return confirm('¿Seguro que deseas eliminar este usuario?')">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No hay usuarios registrados.</p>
+        {% endif %}
 
-    <br>
-    <a href="{{ url_for('index') }}">Registrar nuevo usuario</a>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn btn-editar">Registrar Nuevo Usuario</a>
+    </div>
+
+    <footer>
+        <p>CRUD Flask - Lista de Usuarios</p>
+    </footer>
 </body>
 </html>
+
 
 

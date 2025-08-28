@@ -1,0 +1,112 @@
+/* --- RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* --- GENERAL --- */
+body {
+    background: #f5f6fa;
+    color: #2f3640;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* --- CONTENEDOR --- */
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* --- TITULOS --- */
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #273c75;
+}
+
+/* --- FORMULARIOS --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+    padding: 12px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+input[type="submit"], button {
+    background: #273c75;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover, button:hover {
+    background: #40739e;
+}
+
+/* --- TABLAS --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #dcdde1;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background: #273c75;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f1f2f6;
+}
+
+/* --- BOTONES DE ACCIÓN --- */
+a.btn {
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: white;
+    font-size: 14px;
+    transition: opacity 0.2s;
+}
+
+a.btn-editar {
+    background: #44bd32;
+}
+
+a.btn-eliminar {
+    background: #e84118;
+}
+
+a.btn:hover {
+    opacity: 0.8;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #718093;
+}
